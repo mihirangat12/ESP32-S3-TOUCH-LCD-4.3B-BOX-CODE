@@ -31,7 +31,7 @@
 
 #define LV_MEM_CUSTOM 0
 #if LV_MEM_CUSTOM == 0
-    #define LV_MEM_SIZE (48U * 1024U) /* 48 KB RAM allocated for LVGL */
+    #define LV_MEM_SIZE (96U * 1024U) /* 96 KB RAM allocated for LVGL */
     #define LV_MEM_ADR 0
     #if LV_MEM_ADR == 0
         #undef LV_MEM_POOL_INCLUDE
@@ -138,11 +138,11 @@
  *===================*/
 #define LV_FONT_MONTSERRAT_8  0
 #define LV_FONT_MONTSERRAT_10 0
-#define LV_FONT_MONTSERRAT_12 0
+#define LV_FONT_MONTSERRAT_12 1
 #define LV_FONT_MONTSERRAT_14 1
-#define LV_FONT_MONTSERRAT_16 0
-#define LV_FONT_MONTSERRAT_18 0
-#define LV_FONT_MONTSERRAT_20 0
+#define LV_FONT_MONTSERRAT_16 1
+#define LV_FONT_MONTSERRAT_18 1
+#define LV_FONT_MONTSERRAT_20 1
 #define LV_FONT_MONTSERRAT_22 0
 #define LV_FONT_MONTSERRAT_24 0
 #define LV_FONT_MONTSERRAT_28 0

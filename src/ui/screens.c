@@ -30,22 +30,70 @@ void create_screen_main() {
     {
         lv_obj_t *parent_obj = obj;
         {
-            lv_obj_t *obj = lv_label_create(parent_obj);
-            lv_obj_set_pos(obj, 356, 232);
-            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text_static(obj, "Hello, world!");
+            lv_obj_t *obj = lv_textarea_create(parent_obj);
+            lv_obj_set_pos(obj, 128, 98);
+            lv_obj_set_size(obj, 511, 289);
+            lv_textarea_set_max_length(obj, 128);
+            lv_textarea_set_one_line(obj, false);
+            lv_textarea_set_password_mode(obj, false);
         }
         {
-            lv_obj_t *obj = lv_obj_create(parent_obj);
-            lv_obj_set_pos(obj, 222, 165);
-            lv_obj_set_size(obj, 300, 200);
-            lv_obj_set_style_pad_left(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_top(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_right(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_pad_bottom(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_t *obj = lv_textarea_create(parent_obj);
+            objects.ta_search = obj;
+            lv_obj_set_pos(obj, 153, 126);
+            lv_obj_set_size(obj, 200, 53);
+            lv_textarea_set_max_length(obj, 128);
+            lv_textarea_set_text(obj, "");
+            lv_textarea_set_placeholder_text(obj, "Search Marker Name");
+            lv_textarea_set_one_line(obj, true);
+            lv_textarea_set_password_mode(obj, false);
+        }
+        {
+            // bvhvh / btn_search
+            lv_obj_t *obj = lv_btn_create(parent_obj);
+            objects.bvhvh = obj;
+            objects.btn_search = obj;
+            lv_obj_set_pos(obj, 480, 115);
+            lv_obj_set_size(obj, 100, 50);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Search");
+                }
+            }
+        }
+        {
+            lv_obj_t *obj = lv_textarea_create(parent_obj);
+            objects.ta_results = obj;
+            lv_obj_set_pos(obj, 153, 240);
+            lv_obj_set_size(obj, 388, 126);
+            lv_textarea_set_max_length(obj, 1024);
+            lv_textarea_set_text(obj, "");
+            lv_textarea_set_placeholder_text(obj, "Results / Fabric Comments");
+            lv_textarea_set_one_line(obj, false);
+            lv_textarea_set_password_mode(obj, false);
+        }
+        {
+            // bvhvh_1 / btn_send
+            lv_obj_t *obj = lv_btn_create(parent_obj);
+            objects.bvhvh_1 = obj;
+            objects.btn_send = obj;
+            lv_obj_set_pos(obj, 480, 176);
+            lv_obj_set_size(obj, 100, 50);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text_static(obj, "Send");
+                }
+            }
         }
     }
     
